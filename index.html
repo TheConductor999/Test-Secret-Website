@@ -7,12 +7,13 @@
   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --blue: #1f3f7f;
-      --light-blue: #4a90e2;
-      --teal: #00b8a9;
-      --yellow: #ffd166;
-      --light-gray: #f4f6fb;
-      --text: #273043;
+      --charcoal: #3f4141;
+      --charcoal-light: #5c5e5e;
+      --accent: #e5b22d;
+      --accent-soft: #f0d08a;
+      --background: #f7f7f7;
+      --surface: #ffffff;
+      --text: #2f3131;
     }
 
     * {
@@ -22,13 +23,13 @@
     body {
       margin: 0;
       font-family: 'Source Sans Pro', Arial, sans-serif;
-      background: var(--light-gray);
+      background: var(--background);
       color: var(--text);
       line-height: 1.6;
     }
 
     header {
-      background: linear-gradient(135deg, var(--blue), var(--teal));
+      background: linear-gradient(135deg, var(--charcoal), var(--charcoal-light));
       color: white;
       padding: 2.5rem 1.5rem 5rem;
       position: relative;
@@ -42,7 +43,7 @@
       top: 20px;
       width: 280px;
       height: 280px;
-      background: radial-gradient(circle at center, rgba(255,255,255,0.4), transparent 70%);
+      background: radial-gradient(circle at center, rgba(229, 178, 45, 0.35), transparent 70%);
       border-radius: 50%;
       z-index: 0;
     }
@@ -58,9 +59,18 @@
     }
 
     .logo {
-      font-weight: 700;
-      letter-spacing: 1px;
-      font-size: 1.3rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .logo img {
+      height: 48px;
+      width: auto;
+      display: block;
+      filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.25));
     }
 
     nav ul {
@@ -121,15 +131,19 @@
     }
 
     .btn-primary {
-      background: var(--yellow);
-      color: var(--blue);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      background: var(--accent);
+      color: var(--charcoal);
+      box-shadow: 0 10px 25px rgba(63, 65, 65, 0.2);
     }
 
     .btn-secondary {
-      background: rgba(255,255,255,0.18);
+      background: transparent;
       color: white;
-      border: 1px solid rgba(255,255,255,0.4);
+      border: 2px solid rgba(255, 255, 255, 0.85);
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-soft);
     }
 
     .btn:hover {
@@ -137,11 +151,11 @@
     }
 
     .graphic {
-      background: white;
+      background: var(--surface);
       border-radius: 20px;
       padding: 2rem;
       position: relative;
-      box-shadow: 0 25px 60px rgba(16, 44, 87, 0.2);
+      box-shadow: 0 25px 60px rgba(63, 65, 65, 0.2);
       overflow: hidden;
     }
 
@@ -153,9 +167,9 @@
     main {
       max-width: 1100px;
       margin: -3rem auto 0;
-      background: white;
+      background: var(--surface);
       border-radius: 20px;
-      box-shadow: 0 15px 40px rgba(31, 63, 127, 0.15);
+      box-shadow: 0 15px 40px rgba(63, 65, 65, 0.15);
       padding: 3rem 1.75rem;
       position: relative;
       z-index: 2;
@@ -164,7 +178,7 @@
     .section-title {
       font-size: 2rem;
       margin-bottom: 0.75rem;
-      color: var(--blue);
+      color: var(--charcoal);
       text-align: center;
     }
 
@@ -172,7 +186,7 @@
       text-align: center;
       max-width: 700px;
       margin: 0 auto 2.5rem;
-      color: #4c5671;
+      color: rgba(47, 49, 49, 0.75);
     }
 
     .pillars {
@@ -182,15 +196,16 @@
     }
 
     .pillar {
-      background: var(--light-gray);
+      background: linear-gradient(135deg, rgba(229, 178, 45, 0.08), rgba(255, 255, 255, 0.98));
       border-radius: 16px;
       padding: 1.5rem;
-      border-top: 6px solid var(--teal);
+      border-top: 6px solid var(--accent);
+      box-shadow: 0 8px 24px rgba(63, 65, 65, 0.08);
     }
 
     .pillar h3 {
       margin-top: 0;
-      color: var(--blue);
+      color: var(--charcoal);
     }
 
     .modules {
@@ -204,17 +219,19 @@
     }
 
     .module {
-      border: 1px solid #d9dfeb;
+      border: 1px solid rgba(63, 65, 65, 0.12);
       border-radius: 14px;
       padding: 1.5rem;
       display: flex;
       flex-direction: column;
       gap: 0.75rem;
+      background: linear-gradient(135deg, rgba(229, 178, 45, 0.05), rgba(255, 255, 255, 0.98));
+      box-shadow: 0 10px 24px rgba(63, 65, 65, 0.08);
     }
 
     .module span {
-      background: rgba(31, 63, 127, 0.08);
-      color: var(--blue);
+      background: rgba(229, 178, 45, 0.16);
+      color: var(--charcoal);
       padding: 0.35rem 0.8rem;
       border-radius: 999px;
       font-size: 0.85rem;
@@ -223,10 +240,15 @@
       width: fit-content;
     }
 
+    .module h3 {
+      margin: 0;
+      color: var(--charcoal);
+    }
+
     .module ul {
       padding-left: 1.2rem;
       margin: 0;
-      color: #4c5671;
+      color: rgba(47, 49, 49, 0.75);
     }
 
     .module ul li {
@@ -235,7 +257,7 @@
 
     .quote {
       margin: 3.5rem auto;
-      background: linear-gradient(135deg, rgba(74, 144, 226, 0.12), rgba(0, 184, 169, 0.12));
+      background: linear-gradient(135deg, rgba(92, 94, 94, 0.1), rgba(229, 178, 45, 0.18));
       border-radius: 18px;
       padding: 2.5rem;
       position: relative;
@@ -245,7 +267,7 @@
     .quote::before {
       content: '\201C';
       font-size: 6rem;
-      color: rgba(31, 63, 127, 0.15);
+      color: rgba(63, 65, 65, 0.2);
       position: absolute;
       left: 30px;
       top: -10px;
@@ -254,7 +276,11 @@
     .quote p {
       margin: 0 0 1rem;
       font-size: 1.2rem;
-      color: var(--blue);
+      color: var(--charcoal);
+    }
+
+    .quote strong {
+      color: var(--accent);
     }
 
     .roadmap {
@@ -265,11 +291,12 @@
     }
 
     .roadmap-step {
-      background: #fdfbff;
+      background: var(--surface);
       border-radius: 14px;
       padding: 1.5rem;
-      border: 1px solid rgba(31, 63, 127, 0.12);
+      border: 1px solid rgba(63, 65, 65, 0.12);
       position: relative;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
     }
 
     .roadmap-step::before {
@@ -277,8 +304,8 @@
       position: absolute;
       top: -14px;
       left: 20px;
-      background: var(--light-blue);
-      color: white;
+      background: var(--accent);
+      color: var(--charcoal);
       padding: 0.4rem 0.9rem;
       border-radius: 999px;
       font-size: 0.8rem;
@@ -286,13 +313,20 @@
       font-weight: 700;
     }
 
+    .roadmap-step:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 30px rgba(63, 65, 65, 0.16);
+      border-color: rgba(229, 178, 45, 0.45);
+    }
+
     .cta {
       margin: 4rem auto 0;
-      background: var(--blue);
+      background: linear-gradient(135deg, var(--charcoal), var(--charcoal-light));
       color: white;
       padding: 2.5rem;
       border-radius: 18px;
       text-align: center;
+      box-shadow: 0 15px 40px rgba(63, 65, 65, 0.2);
     }
 
     .cta h2 {
@@ -306,7 +340,8 @@
     footer {
       text-align: center;
       padding: 2rem 1rem 3rem;
-      color: #67738d;
+      background: var(--charcoal);
+      color: rgba(255, 255, 255, 0.85);
       font-size: 0.95rem;
     }
 
@@ -317,13 +352,18 @@
       header {
         padding-bottom: 3.5rem;
       }
+      .logo img {
+        height: 40px;
+      }
     }
   </style>
 </head>
 <body>
   <header>
     <nav>
-      <div class="logo">Baldrige Excellence</div>
+      <a href="#" class="logo" aria-label="ENA home">
+        <img src="Logo ENA.png" alt="ENA logo">
+      </a>
       <ul>
         <li><a href="#pillars">Pillars</a></li>
         <li><a href="#modules">Modules</a></li>
@@ -344,8 +384,8 @@
         <svg viewBox="0 0 500 360" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#4a90e2" stop-opacity="0.9" />
-              <stop offset="100%" stop-color="#00b8a9" stop-opacity="0.9" />
+              <stop offset="0%" stop-color="#5c5e5e" stop-opacity="0.95" />
+              <stop offset="100%" stop-color="#e5b22d" stop-opacity="0.9" />
             </linearGradient>
           </defs>
           <rect x="40" y="60" width="420" height="260" rx="24" fill="url(#grad)" opacity="0.85" />
@@ -353,10 +393,10 @@
           <rect x="200" y="110" width="180" height="20" rx="10" fill="rgba(255,255,255,0.75)" />
           <rect x="200" y="150" width="150" height="20" rx="10" fill="rgba(255,255,255,0.6)" />
           <rect x="200" y="190" width="190" height="20" rx="10" fill="rgba(255,255,255,0.45)" />
-          <polyline points="80,260 160,210 220,240 320,180 380,210" fill="none" stroke="#ffd166" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" />
-          <circle cx="160" cy="210" r="12" fill="#ffd166" />
-          <circle cx="320" cy="180" r="12" fill="#ffd166" />
-          <circle cx="380" cy="210" r="12" fill="#ffd166" />
+          <polyline points="80,260 160,210 220,240 320,180 380,210" fill="none" stroke="#e5b22d" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" />
+          <circle cx="160" cy="210" r="12" fill="#e5b22d" />
+          <circle cx="320" cy="180" r="12" fill="#e5b22d" />
+          <circle cx="380" cy="210" r="12" fill="#e5b22d" />
           <rect x="80" y="250" width="340" height="80" rx="20" fill="rgba(255,255,255,0.12)" />
           <text x="100" y="295" fill="white" font-size="24" font-weight="bold">Measure & Improve Together</text>
         </svg>
