@@ -1,1 +1,477 @@
-<html><body>test</body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Baldrige Excellence Training</title>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --blue: #1f3f7f;
+      --light-blue: #4a90e2;
+      --teal: #00b8a9;
+      --yellow: #ffd166;
+      --light-gray: #f4f6fb;
+      --text: #273043;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Source Sans Pro', Arial, sans-serif;
+      background: var(--light-gray);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--blue), var(--teal));
+      color: white;
+      padding: 2.5rem 1.5rem 5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      right: -120px;
+      top: 20px;
+      width: 280px;
+      height: 280px;
+      background: radial-gradient(circle at center, rgba(255,255,255,0.4), transparent 70%);
+      border-radius: 50%;
+      z-index: 0;
+    }
+
+    header nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1100px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .logo {
+      font-weight: 700;
+      letter-spacing: 1px;
+      font-size: 1.3rem;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      transition: opacity 0.2s ease;
+    }
+
+    nav a:hover {
+      opacity: 0.8;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      align-items: center;
+      max-width: 1100px;
+      margin: 4rem auto 0;
+      gap: 2rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      max-width: 480px;
+      margin-bottom: 1.5rem;
+    }
+
+    .btn-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .btn {
+      padding: 0.85rem 1.8rem;
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: 600;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .btn-primary {
+      background: var(--yellow);
+      color: var(--blue);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,0.18);
+      color: white;
+      border: 1px solid rgba(255,255,255,0.4);
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+
+    .graphic {
+      background: white;
+      border-radius: 20px;
+      padding: 2rem;
+      position: relative;
+      box-shadow: 0 25px 60px rgba(16, 44, 87, 0.2);
+      overflow: hidden;
+    }
+
+    .graphic svg {
+      width: 100%;
+      height: auto;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: -3rem auto 0;
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 15px 40px rgba(31, 63, 127, 0.15);
+      padding: 3rem 1.75rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 0.75rem;
+      color: var(--blue);
+      text-align: center;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 2.5rem;
+      color: #4c5671;
+    }
+
+    .pillars {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.75rem;
+    }
+
+    .pillar {
+      background: var(--light-gray);
+      border-radius: 16px;
+      padding: 1.5rem;
+      border-top: 6px solid var(--teal);
+    }
+
+    .pillar h3 {
+      margin-top: 0;
+      color: var(--blue);
+    }
+
+    .modules {
+      margin-top: 3rem;
+    }
+
+    .module-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .module {
+      border: 1px solid #d9dfeb;
+      border-radius: 14px;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .module span {
+      background: rgba(31, 63, 127, 0.08);
+      color: var(--blue);
+      padding: 0.35rem 0.8rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      display: inline-block;
+      width: fit-content;
+    }
+
+    .module ul {
+      padding-left: 1.2rem;
+      margin: 0;
+      color: #4c5671;
+    }
+
+    .module ul li {
+      margin-bottom: 0.4rem;
+    }
+
+    .quote {
+      margin: 3.5rem auto;
+      background: linear-gradient(135deg, rgba(74, 144, 226, 0.12), rgba(0, 184, 169, 0.12));
+      border-radius: 18px;
+      padding: 2.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .quote::before {
+      content: '\201C';
+      font-size: 6rem;
+      color: rgba(31, 63, 127, 0.15);
+      position: absolute;
+      left: 30px;
+      top: -10px;
+    }
+
+    .quote p {
+      margin: 0 0 1rem;
+      font-size: 1.2rem;
+      color: var(--blue);
+    }
+
+    .roadmap {
+      margin-top: 3rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .roadmap-step {
+      background: #fdfbff;
+      border-radius: 14px;
+      padding: 1.5rem;
+      border: 1px solid rgba(31, 63, 127, 0.12);
+      position: relative;
+    }
+
+    .roadmap-step::before {
+      content: attr(data-step);
+      position: absolute;
+      top: -14px;
+      left: 20px;
+      background: var(--light-blue);
+      color: white;
+      padding: 0.4rem 0.9rem;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      letter-spacing: 1px;
+      font-weight: 700;
+    }
+
+    .cta {
+      margin: 4rem auto 0;
+      background: var(--blue);
+      color: white;
+      padding: 2.5rem;
+      border-radius: 18px;
+      text-align: center;
+    }
+
+    .cta h2 {
+      margin: 0 0 1rem;
+    }
+
+    .cta p {
+      margin-bottom: 2rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem 3rem;
+      color: #67738d;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 640px) {
+      nav ul {
+        display: none;
+      }
+      header {
+        padding-bottom: 3.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Baldrige Excellence</div>
+      <ul>
+        <li><a href="#pillars">Pillars</a></li>
+        <li><a href="#modules">Modules</a></li>
+        <li><a href="#roadmap">Roadmap</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="hero">
+      <div>
+        <h1>Accelerate Your Baldrige Performance Journey</h1>
+        <p>Equip your organization with practical tools, aligned leadership, and systems thinking to deliver sustained excellence using the Baldrige Excellence Framework.</p>
+        <div class="btn-group">
+          <button class="btn btn-primary">Browse Training Tracks</button>
+          <button class="btn btn-secondary">Download Program Guide</button>
+        </div>
+      </div>
+      <div class="graphic" aria-hidden="true">
+        <svg viewBox="0 0 500 360" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#4a90e2" stop-opacity="0.9" />
+              <stop offset="100%" stop-color="#00b8a9" stop-opacity="0.9" />
+            </linearGradient>
+          </defs>
+          <rect x="40" y="60" width="420" height="260" rx="24" fill="url(#grad)" opacity="0.85" />
+          <circle cx="120" cy="120" r="48" fill="rgba(255,255,255,0.85)" />
+          <rect x="200" y="110" width="180" height="20" rx="10" fill="rgba(255,255,255,0.75)" />
+          <rect x="200" y="150" width="150" height="20" rx="10" fill="rgba(255,255,255,0.6)" />
+          <rect x="200" y="190" width="190" height="20" rx="10" fill="rgba(255,255,255,0.45)" />
+          <polyline points="80,260 160,210 220,240 320,180 380,210" fill="none" stroke="#ffd166" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" />
+          <circle cx="160" cy="210" r="12" fill="#ffd166" />
+          <circle cx="320" cy="180" r="12" fill="#ffd166" />
+          <circle cx="380" cy="210" r="12" fill="#ffd166" />
+          <rect x="80" y="250" width="340" height="80" rx="20" fill="rgba(255,255,255,0.12)" />
+          <text x="100" y="295" fill="white" font-size="24" font-weight="bold">Measure & Improve Together</text>
+        </svg>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="pillars">
+      <h2 class="section-title">Baldrige Training Pillars</h2>
+      <p class="section-subtitle">Our learning architecture is aligned with the Baldrige Excellence Framework to ensure that leaders, teams, and assessors have the competencies to embed performance excellence.</p>
+      <div class="pillars">
+        <article class="pillar">
+          <h3>Leadership Alignment</h3>
+          <p>Translate mission and vision into clear leadership commitments that cascade through the organization. Build accountability, empowerment, and purpose-driven decision making.</p>
+        </article>
+        <article class="pillar">
+          <h3>Strategy Deployment</h3>
+          <p>Use evidence-based planning to set priorities, allocate resources, and integrate improvement cycles. Learn how to balance short-term wins with long-term value creation.</p>
+        </article>
+        <article class="pillar">
+          <h3>Customer & Workforce Engagement</h3>
+          <p>Capture voice-of-customer insights, co-create experiences, and cultivate an engaged workforce that innovates around core values and ethics.</p>
+        </article>
+        <article class="pillar">
+          <h3>Measurement, Analysis & Knowledge</h3>
+          <p>Develop intelligent measurement systems, knowledge management practices, and analytics to fuel learning, agility, and resilience.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="modules" class="modules">
+      <h2 class="section-title">Signature Learning Modules</h2>
+      <p class="section-subtitle">Build the foundational skills your organization needs to thrive at each stage of the Baldrige journey. Join live cohorts, on-demand lessons, or blended pathways.</p>
+      <div class="module-grid">
+        <article class="module">
+          <span>Module 1</span>
+          <h3>Baldrige Framework Foundations</h3>
+          <ul>
+            <li>Seven categories explained through real-world case studies</li>
+            <li>Interactive maturity assessments</li>
+            <li>Role-based learning plans</li>
+          </ul>
+        </article>
+        <article class="module">
+          <span>Module 2</span>
+          <h3>Systems Thinking for Leaders</h3>
+          <ul>
+            <li>Align leadership system components</li>
+            <li>Integrate risk, compliance, and innovation</li>
+            <li>Facilitate cross-functional dialogues</li>
+          </ul>
+        </article>
+        <article class="module">
+          <span>Module 3</span>
+          <h3>Assessment & Feedback Mastery</h3>
+          <ul>
+            <li>Develop high-value feedback reports</li>
+            <li>Plan action-driven site visits</li>
+            <li>Leverage scorebooks for learning</li>
+          </ul>
+        </article>
+        <article class="module">
+          <span>Module 4</span>
+          <h3>Improvement Lab Series</h3>
+          <ul>
+            <li>Rapid improvement cycles and Hoshin planning</li>
+            <li>Data storytelling with dashboards</li>
+            <li>Innovation sprints & experimentation</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="quote">
+      <p>“The Baldrige Criteria gave us a common language for change. This training program made it actionable for every leader and team.”</p>
+      <strong>— Dr. Lena Ortiz, Chief Quality Officer</strong>
+    </section>
+
+    <section id="roadmap">
+      <h2 class="section-title">Excellence Roadmap</h2>
+      <p class="section-subtitle">A phased approach that supports self-assessment, deployment, and application to the Baldrige Award.</p>
+      <div class="roadmap">
+        <article class="roadmap-step" data-step="STEP 1">
+          <h3>Discover</h3>
+          <p>Assess current maturity, engage leaders, and prioritize capability building.</p>
+        </article>
+        <article class="roadmap-step" data-step="STEP 2">
+          <h3>Design</h3>
+          <p>Co-create strategies and process architectures aligned with Baldrige categories.</p>
+        </article>
+        <article class="roadmap-step" data-step="STEP 3">
+          <h3>Deploy</h3>
+          <p>Launch training cohorts, deploy improvement labs, and monitor progress.</p>
+        </article>
+        <article class="roadmap-step" data-step="STEP 4">
+          <h3>Sustain</h3>
+          <p>Establish coaching cadences, knowledge sharing, and annual refinement cycles.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="cta">
+      <h2>Ready to Mobilize Your Baldrige Champions?</h2>
+      <p>Let’s design a training journey that meets your organization’s readiness and ambitions. Connect with our Baldrige specialists to co-create the path forward.</p>
+      <button class="btn btn-primary">Schedule a Discovery Call</button>
+    </section>
+  </main>
+
+  <footer>
+    &copy; <span id="year"></span> Baldrige Excellence Training Collaborative. All rights reserved.
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
