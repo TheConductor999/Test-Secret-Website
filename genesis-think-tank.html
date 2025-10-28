@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Genesis Think Tank Marketing Piece</title>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --charcoal: #3f4141;
+      --charcoal-light: #5c5e5e;
+      --accent: #e5b22d;
+      --accent-soft: #f0d08a;
+      --background: #f7f7f7;
+      --surface: #ffffff;
+      --text: #2f3131;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Source Sans Pro', Arial, sans-serif;
+      background: var(--background);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--charcoal), var(--charcoal-light));
+      color: white;
+      padding: 3rem 1.5rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: clamp(2.2rem, 5vw, 3.2rem);
+      margin-bottom: 0.75rem;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      margin: 0;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 4rem;
+    }
+
+    section + section {
+      margin-top: 2.5rem;
+    }
+
+    h2 {
+      color: var(--charcoal);
+      font-size: 1.75rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      margin: 0 0 1rem;
+      font-size: 1.05rem;
+    }
+
+    .highlight {
+      background: var(--surface);
+      border-left: 4px solid var(--accent);
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    }
+
+    .checklist {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 0;
+    }
+
+    .checklist li {
+      position: relative;
+      padding-left: 2rem;
+      margin-bottom: 0.75rem;
+      font-size: 1.05rem;
+    }
+
+    .checklist li::before {
+      content: "\2714";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .contact {
+      margin-top: 2rem;
+      font-weight: 600;
+    }
+
+    .cta {
+      margin-top: 2.5rem;
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--charcoal);
+    }
+
+    .return-link {
+      display: inline-block;
+      margin-top: 3rem;
+      text-decoration: none;
+      color: var(--charcoal);
+      font-weight: 600;
+      border-bottom: 2px solid var(--accent);
+      padding-bottom: 0.2rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem 3rem;
+      color: var(--charcoal-light);
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Genesis Think Tank: Transforming Northern New England’s Mental Health Ecosystem</h1>
+    <p>A Coalition of Leaders for Systemic Change</p>
+  </header>
+
+  <main>
+    <section>
+      <p>The Genesis Think Tank is a pioneering assembly of key CEOs from diverse economic sectors, united by a shared commitment to shaping the macro ecosystem of Northern New England. These forward-thinking leaders are leveraging systems thinking and the Baldrige Framework for Excellence to drive meaningful, collaborative change.</p>
+    </section>
+
+    <section class="highlight">
+      <h2>Led by Visionaries</h2>
+      <p>Tom Raffio, CEO &amp; President of Northeast Delta Dental, a 2024 Malcolm Baldrige National Quality Award winner, serves as the driving force behind Genesis.</p>
+      <p>Brian Hettrick, Executive Director of ExcellenceNorth Alliance, and a seasoned systems expert, guides the initiative as Chief Guide.</p>
+    </section>
+
+    <section>
+      <h2>Our Mission: A Systems Approach to Mental Health</h2>
+      <p>Genesis has committed to mapping and transforming the mental health ecosystem of Northern New England, with a particular focus on youth mental health. The group is applying system dynamics to:</p>
+      <ul class="checklist">
+        <li>Identify drivers, feedback loops, and interdependencies within the mental health system.</li>
+        <li>Shift from a siloed approach to a collaborative, systemic solution.</li>
+        <li>Uncover and address root causes, rather than merely treating symptoms.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Why Youth Mental Health?</h2>
+      <p>The escalating youth mental health crisis demands urgent, system-wide intervention. By understanding the true dynamics of the system, Genesis aims to reshape policies, align resources, and drive sustainable improvements—creating a future where mental well-being is a cornerstone of a thriving society.</p>
+    </section>
+
+    <section>
+      <h2>Join Us in Leading the Future of Excellence</h2>
+      <p>Genesis Think Tank is more than an initiative—it’s a movement for real, systemic change. We invite forward-thinking leaders, policymakers, and stakeholders to be part of this transformational journey.</p>
+      <p class="contact">For more information, contact Brian Hettrick &lt;<a href="mailto:brian.hettrick@excellencenorth.org">brian.hettrick@excellencenorth.org</a>&gt;</p>
+      <p class="cta">Genesis Think Tank—Shaping Excellence, Transforming Systems.</p>
+    </section>
+
+    <a class="return-link" href="index.html">&#8592; Back to Baldrige Excellence Training</a>
+  </main>
+
+  <footer>
+    &copy; <span id="year"></span> Genesis Think Tank. All rights reserved.
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
